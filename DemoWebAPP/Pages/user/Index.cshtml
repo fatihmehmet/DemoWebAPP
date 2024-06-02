@@ -1,0 +1,61 @@
+﻿@page
+@model DemoWebAPP.Pages.user.IndexModel
+@{
+}
+
+<a href="/User/Create" class="btn btn-primary">Yeni Kullanıcı Ekle</a>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>ADI</td>
+            <td>SOYADI</td>
+            <td>Güncelle</td>
+            <td>Sil</td>
+        </tr>
+
+        </thead>
+
+    <tbody>
+        @{
+            foreach (var item in Model.listUsers)
+            { 
+                                    <tr>
+                                       <td>@item.ID</td>
+                                        <td>@item.FirstName</td>
+                                        <td>@item.LastName</td>
+                                        <td>
+                                        <a href="/User/Edit?id=@item.ID" class="btn btn-primary">Güncelle</a>
+                                        </td>
+                                        <td>                        
+                                          
+                                                                
+                                              <a onclick="return onDelete(@item.ID)" class="btn btn-danger">Sil</a>
+                                        </td>
+                                    
+                                    
+                                    </tr>
+            
+            }
+
+        
+        }
+
+    </tbody>
+
+   
+</table>
+
+<script>
+    function onDelete(id) { 
+     if (window.confirm("Kaydı Silmek İstediğinize Emin misiniz?")) 
+        { 
+              window.location.href = "/User/Delete?id=" + id;
+ 
+       }
+    
+    }
+
+
+</script>
