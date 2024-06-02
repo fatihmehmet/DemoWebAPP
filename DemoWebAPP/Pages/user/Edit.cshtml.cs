@@ -45,7 +45,7 @@ namespace DemoWebAPP.Pages.user
 
             if (user.FirstName.Length == 0 || user.LastName.Length == 0)
             {
-                errorMessage = "Bu Alanlar Boþ Geçilemez!.bu alan boþ";
+                errorMessage = "Bu Alanlar Boþ Geçilemez!.--------------------------------";
                 return;
 
             }
